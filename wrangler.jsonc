@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cloudflare-workers-army",
+  "main": "src/server.ts",
+  "compatibility_date": "2025-08-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "ai": {
+    "binding": "AI"
+  },
+  "assets": {
+    "directory": "public"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "Chat",
+        "class_name": "Chat"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["Chat"]
+    }
+  ]
+}
